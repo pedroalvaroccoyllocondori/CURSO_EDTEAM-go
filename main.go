@@ -3,16 +3,11 @@ package main
 import "fmt"
 
 func main() {
-	//operadores  de comparacion: >,<,==,!= ,>=,<=
-	fmt.Println(4 > 5)
-	fmt.Println(4 != 5)
-	fmt.Println(4 == 4)
-	//operadores logicos
-	var edad = 25
-	fmt.Println(edad >= 18 && edad <= 60)
+	fruta := "🍎"
+	//almacenar direcciones en memoria
+	var direccion *string
+	direccion = &fruta // operador de direcciones de memoria '&'
 
-	fmt.Println(edad <= 18 || edad >= 60)
-	//operadores unarios :!
-	fmt.Println(!(4 != 4))
-
+	fmt.Printf("tipo: %T , valor: %s , direccion: %v \n", fruta, fruta, &fruta)
+	fmt.Printf("tipo: %T , valor: %v, desreferenciacion: %s", direccion, direccion, *direccion)
 }
