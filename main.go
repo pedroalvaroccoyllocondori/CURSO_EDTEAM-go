@@ -1,11 +1,13 @@
+//paquete main es el paquete principal que permite ejecutar la aplicacion de edteam
 package main
 
-import "fmt"
-
 func main() {
-	const pi = 3.14 //asignacion de constantes en go
-	//pi = 4.15
-	// no se puede utilizar el operador ":="
-	fmt.Println(pi)
+
+	//comentario de una linea
+	/*
+		comentario multilinea
+		comentario multilinea
+
+	*/
 
 }
