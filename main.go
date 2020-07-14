@@ -3,11 +3,15 @@ package main
 import "fmt"
 
 func main() {
-	fruta := "🍎"
-	//almacenar direcciones en memoria
-	var direccion *string
-	direccion = &fruta // operador de direcciones de memoria '&'
 
-	fmt.Printf("tipo: %T , valor: %s , direccion: %v \n", fruta, fruta, &fruta)
-	fmt.Printf("tipo: %T , valor: %v, desreferenciacion: %s", direccion, direccion, *direccion)
+	//declaracion de  un array
+	var comida [3]string
+	comida[0] = "🍕"
+	comida[1] = "🍔"
+	comida[2] = "🍗"
+	fmt.Println(comida)
+	//declaracion con asignacion
+	frutas := [3]string{"🍇", "🍌", "🍉"}
+	fmt.Println(frutas)
+
 }
