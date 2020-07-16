@@ -5,9 +5,10 @@ import "fmt"
 func main() {
 	//en go solo existeel for
 
-	//for parecido a un while
+	//for foerever es un ciclo que dura para siempre
+
 	i := 0
-	for i < 10 {
+	for {
 		fmt.Println("ciclo", i)
 		i++
 
