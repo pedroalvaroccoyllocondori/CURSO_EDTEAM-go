@@ -3,24 +3,31 @@ package main
 import "fmt"
 
 func main() {
-	emoji := "🌵"
-	if emoji == "🌵" {
-		fmt.Println("es un cactus")
+	emoji := "😺"
+	switch emoji {
+	case "😺": // no es necesario usar la palabra break
+		fmt.Println("es un gato")
+	case "🐶", "🐕": //case de forma multiple
+		fmt.Println("es un un perro")
+	case "🐦", "🦅": // case de forma multiple
+		fmt.Println("es un ave")
 
-	} else if emoji == "😃" {
-		fmt.Println("es un cactus")
-	} else {
-		fmt.Println("no es ninguna de las anterioes")
-	}
-	/// otro tipo de  formar el if en go
-	/// con la  condicon en el escope
-	if animal := "🐳"; animal == "🌵" {
-		fmt.Println("es un cactus")
+	default:
+		fmt.Println(" no es ni gato ni perro")
 
-	} else if animal == "🐳" || emoji == "🐆" {
-		fmt.Println("es una ballena")
-	} else {
-		fmt.Println("no es ninguna de las anterioes")
 	}
 
+	//swit con estructura logica
+	fruta := "🍎"
+	switch {
+	case fruta == "🍎" || fruta == "🍍": // no es necesario usar la palabra break
+		fmt.Println("es una fruta")
+
+	case fruta == "🐦" || fruta == "🦅": // case de forma multiple
+		fmt.Println("no es una fruta")
+
+	default:
+		fmt.Println(" no es ni fruta ni nada de o anterior")
+
+	}
 }
