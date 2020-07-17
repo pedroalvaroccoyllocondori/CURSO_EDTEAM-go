@@ -5,23 +5,13 @@ import "fmt"
 func main() {
 	//en go solo existeel for
 
-	//for range slice funciona npara iterar slices
+	//for range  maps es el equivalente a un dicionario emn python
 
-	numeros := []uint8{2, 4, 6, 8, 10}
+	deportes := map[string]string{"basquet": "🏀", "beisbol": "🏈", "futbol": "⚽️"} //en un mapa en go se colocan  tanto el tipode dato de  la clave  asicomo de el valor
 
-	for indice, valor := range numeros {
-		fmt.Println("indice", indice, "valor", valor)
+	for llave, valor := range deportes {
+		fmt.Println("llave:", llave, ",valor:", valor)
+
 	}
-
-	nums := []uint8{2, 4, 6, 8, 10}
-	for _, valor := range nums { // no cambia el valor ya que  se esta utilizando una opia del elemeto
-		valor *= 5
-	}
-	fmt.Println(nums)
-
-	for indice, _ := range nums {
-		nums[indice] *= 5
-	}
-	fmt.Println(nums)
 
 }
