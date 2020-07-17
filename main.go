@@ -5,13 +5,16 @@ import "fmt"
 func main() {
 	//en go solo existeel for
 
-	//for range  maps es el equivalente a un dicionario emn python
+	//for range  en tipode datos string
 
-	deportes := map[string]string{"basquet": "🏀", "beisbol": "🏈", "futbol": "⚽️"} //en un mapa en go se colocan  tanto el tipode dato de  la clave  asicomo de el valor
+	hola := "hola a todos"
 
-	for llave, valor := range deportes {
-		fmt.Println("llave:", llave, ",valor:", valor)
+	for _, valor := range hola {
+		fmt.Println(valor) //si defrente imprimins  los valores de las letras no dan los bites de cada letra
 
+	}
+	for _, valor := range hola {
+		fmt.Println(string(valor)) //para obtener los valores debemos de  hacer un castin  a los bites de cada letra
 	}
 
 }
