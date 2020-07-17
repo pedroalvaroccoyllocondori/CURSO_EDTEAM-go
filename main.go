@@ -4,10 +4,10 @@ import "fmt"
 
 func main() {
 	// funciones en go
-	hola()
+	hola("alvaro", "ccoyllo")
 
 }
 
-func hola() {
-	fmt.Println("hola a todos mis amigos en go ")
+func hola(primerNombre string, apellido string) {
+	fmt.Printf("hola %s con apellido %s", primerNombre, apellido)
 }
