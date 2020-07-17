@@ -4,10 +4,11 @@ import "fmt"
 
 func main() {
 	// funciones en go
-	hola("alvaro", "ccoyllo")
+	fmt.Println(suma(6, 9))
 
 }
 
-func hola(primerNombre string, apellido string) {
-	fmt.Printf("hola %s con apellido %s", primerNombre, apellido)
+func suma(numero1, numero2 int) int {
+	return numero1 + numero2
+
 }
