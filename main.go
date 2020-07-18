@@ -3,15 +3,14 @@ package main
 import "fmt"
 
 func main() {
-	// funciones variaticas
-
-	fmt.Println(suma(20, 30, 7, 8))
-
-}
-func suma(numeros ...int) int {
-	resultado := 0
-	for _, valor := range numeros {
-		resultado += valor
+	// funciones  anomimas
+	x := func() {
+		fmt.Println("hola edtean desde ica")
 	}
-	return resultado
+	x()
+	// funcion anomima auto ejecutada
+	func(texto string) {
+		fmt.Println("soy una funcion autoejecutada", texto)
+	}("alvaro")
+
 }
