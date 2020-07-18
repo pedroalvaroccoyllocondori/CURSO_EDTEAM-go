@@ -8,7 +8,7 @@ import (
 func main() {
 	// errores en go
 
-	resultado, errorr := division(10, 0)
+	resultado, errorr := division(10, 5)
 	if errorr != nil {
 		fmt.Printf("ocurrio un error: %v", errorr)
 		return // para finalizar la ejecucion de el programa
@@ -17,9 +17,12 @@ func main() {
 
 }
 
-func division(dividendo, divisor int) (int, error) {
+func division(dividendo, divisor int) (resultado int, err error) {
+
 	if divisor == 0 {
-		return 0, errors.New("no puedes dividir entre cero") //devolvemos cero  x q es un valor que no se utiliza
+		err = errors.New("no puedes dividir entre cero")
+		return //retornara valor cero
 	}
-	return dividendo / divisor, nil //devolvemos nil xq es su valor nulo de error
+	resultado = dividendo / divisor
+	return //retornara el valor cero de error osea (nil)
 }
