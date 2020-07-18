@@ -1,14 +1,22 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
 	// funciones en go
-	fmt.Println(suma(6, 9))
+	texto := "AlVarO"
+	minuscula, mayuscula := convertir(texto)
+	fmt.Println("nimuscula:", minuscula, "mayuscula:", mayuscula)
 
 }
 
-func suma(numero1, numero2 int) int {
-	return numero1 + numero2
+// funciones con  multiples valores
+func convertir(texto string) (string, string) { // funciones con multiples retornos
+	minusculas := strings.ToLower(texto)
+	mayusculas := strings.ToUpper(texto)
+	return minusculas, mayusculas
 
 }
