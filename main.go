@@ -1,29 +1,25 @@
 package main
 
 import (
+	"errors"
 	"fmt"
-	"io/ioutil"
 )
 
 func main() {
 	// errores en go
-	contenido, errores := ioutil.ReadFile("./prueba.txt") //devuelve dos valores
-	// el primer valor es el contenido
 
-	if errores != nil {
-		fmt.Printf("ocurrio un error: %v", errores)
+	resultado, errorr := division(10, 0)
+	if errorr != nil {
+		fmt.Printf("ocurrio un error: %v", errorr)
 		return // para finalizar la ejecucion de el programa
 	}
+	fmt.Println("la respuesta es :", resultado)
 
-	fmt.Println(string(contenido)) //debemos de hacer el castin xq no los devuelve en forma de bites
+}
 
-	contenido1, errores1 := ioutil.ReadFile("./inexistente.txt") //devuelve dos valores
-	// el primer valor es el contenido
-	if errores1 != nil {
-		fmt.Printf("ocurrio un error: %v", errores1)
-		return // para finalizar la ejecucion de el programa
+func division(dividendo, divisor int) (int, error) {
+	if divisor == 0 {
+		return 0, errors.New("no puedes dividir entre cero") //devolvemos cero  x q es un valor que no se utiliza
 	}
-
-	fmt.Println(string(contenido1)) //debemos de hacer el castin xq no los devuelve en forma de bites
-
+	return dividendo / divisor, nil //devolvemos nil xq es su valor nulo de error
 }
