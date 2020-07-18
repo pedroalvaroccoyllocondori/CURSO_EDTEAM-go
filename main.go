@@ -2,21 +2,28 @@ package main
 
 import (
 	"fmt"
-	"strings"
+	"io/ioutil"
 )
 
 func main() {
-	// funciones en go
-	texto := "AlVarO"
-	minuscula, mayuscula := convertir(texto)
-	fmt.Println("nimuscula:", minuscula, "mayuscula:", mayuscula)
+	// errores en go
+	contenido, errores := ioutil.ReadFile("./prueba.txt") //devuelve dos valores
+	// el primer valor es el contenido
 
-}
+	if errores != nil {
+		fmt.Printf("ocurrio un error: %v", errores)
+		return // para finalizar la ejecucion de el programa
+	}
 
-// funciones con  multiples valores
-func convertir(texto string) (string, string) { // funciones con multiples retornos
-	minusculas := strings.ToLower(texto)
-	mayusculas := strings.ToUpper(texto)
-	return minusculas, mayusculas
+	fmt.Println(string(contenido)) //debemos de hacer el castin xq no los devuelve en forma de bites
+
+	contenido1, errores1 := ioutil.ReadFile("./inexistente.txt") //devuelve dos valores
+	// el primer valor es el contenido
+	if errores1 != nil {
+		fmt.Printf("ocurrio un error: %v", errores1)
+		return // para finalizar la ejecucion de el programa
+	}
+
+	fmt.Println(string(contenido1)) //debemos de hacer el castin xq no los devuelve en forma de bites
 
 }
