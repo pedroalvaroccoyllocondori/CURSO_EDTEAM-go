@@ -3,15 +3,15 @@ package main
 import "fmt"
 
 func main() {
-	// errores en go
+	// funciones variaticas
 
-	saludo := hola("alvaro")("ccoyllo")
-	fmt.Println(saludo)
+	fmt.Println(suma(20, 30, 7, 8))
 
 }
-
-func hola(nombre string) func(string) string {
-	return func(apellido string) string {
-		return "hola " + nombre + " " + apellido
+func suma(numeros ...int) int {
+	resultado := 0
+	for _, valor := range numeros {
+		resultado += valor
 	}
+	return resultado
 }
