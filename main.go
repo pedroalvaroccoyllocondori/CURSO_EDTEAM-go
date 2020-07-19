@@ -1,15 +1,27 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
 
 func main() {
-	// defer en go
-	// nos permite diferir algo  o aplzara la ejecucionde una funcion
-	a := 5
-	defer fmt.Println("defer:", a) // se aplza la ejeucion de la funcion
-	// sin enbargo al momento de plzar la ejecuion a tenia un valor de 5 x eso es que se imprime en ese orden
 
-	a = 10
-	fmt.Println(a)
+	//aplicaciones de uso
+	// limpiar recursos , cerrar archivos,cerrar conexiones de red, cerar conexiones de base de datos
+	archivo, errorr := os.Create("prueba2.txt")
+
+	if errorr != nil {
+		fmt.Printf("ocurio un error al crear: %v", errorr)
+		return
+	}
+	defer archivo.Close()                                    // siempre se ejecuta xq esta en la pila del defer
+	_, errorr = archivo.Write([]byte("hola alvaro ccoyllo")) // develve una variable n (numero de bytes sritos y un error)
+
+	if errorr != nil {
+		//archivo.Close() // debemos cerrar el arivo para poder limpiar los recursos
+		fmt.Printf("ocurio un error al escribir : %v", errorr)
+		return
+	}
 
 }
