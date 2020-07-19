@@ -2,26 +2,27 @@ package main
 
 import (
 	"fmt"
-	"os"
 )
 
 func main() {
 
-	//aplicaciones de uso
-	// limpiar recursos , cerrar archivos,cerrar conexiones de red, cerar conexiones de base de datos
-	archivo, errorr := os.Create("prueba2.txt")
+	//funcion panic nos permite entara en panico (finalizar la ejecucion s del el programa)
+	division(10, 2)
+	division(11, 2)
+	division(16, 2)
+	division(106, 0) // en esta parte la funcion entrae panico
+	// nos muestra toda la pila de errores cuando se ejecuta en la terminal
 
-	if errorr != nil {
-		fmt.Printf("ocurio un error al crear: %v", errorr)
-		return
+	division(10, 2)
+
+}
+func division(dividendo, divisor int) {
+	validarDivision(divisor)
+	fmt.Println(dividendo / divisor)
+}
+func validarDivision(divisor int) {
+	if divisor == 0 {
+		panic("☠️")
+
 	}
-	defer archivo.Close()                                    // siempre se ejecuta xq esta en la pila del defer
-	_, errorr = archivo.Write([]byte("hola alvaro ccoyllo")) // develve una variable n (numero de bytes sritos y un error)
-
-	if errorr != nil {
-		//archivo.Close() // debemos cerrar el arivo para poder limpiar los recursos
-		fmt.Printf("ocurio un error al escribir : %v", errorr)
-		return
-	}
-
 }
