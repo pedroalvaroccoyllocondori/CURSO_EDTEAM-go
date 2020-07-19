@@ -3,14 +3,11 @@ package main
 import "fmt"
 
 func main() {
-	// funciones  anomimas
-	x := func() {
-		fmt.Println("hola edtean desde ica")
-	}
-	x()
-	// funcion anomima auto ejecutada
-	func(texto string) {
-		fmt.Println("soy una funcion autoejecutada", texto)
-	}("alvaro")
+	// defer en go
+	// nos permite diferir algo  o aplzara la ejecucionde una funcion
+	defer fmt.Println(3) // se ejecuta al finalizar todas la lineas
+
+	fmt.Println(1)
+	fmt.Println(2)
 
 }
