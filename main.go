@@ -5,7 +5,8 @@ import (
 )
 
 func main() {
-
+	// funcion recover nos permite recuperarnos de una funcion panic
+	// de utiliza  junto con un defer
 	//funcion panic nos permite entara en panico (finalizar la ejecucion s del el programa)
 	division(10, 2)
 	division(11, 2)
@@ -17,6 +18,12 @@ func main() {
 
 }
 func division(dividendo, divisor int) {
+	defer func() {
+		if recuperar := recover(); recuperar != nil {
+			fmt.Println("recuperandome de el panic", recuperar)
+		}
+
+	}() // funcion autoejecutada
 	validarDivision(divisor)
 	fmt.Println(dividendo / divisor)
 }
