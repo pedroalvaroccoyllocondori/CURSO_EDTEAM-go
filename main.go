@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"github.com/pedroalvaroccoyllocondori/go/saludar"
+	"rsc.io/quote"
 )
 
 func main() {
@@ -12,5 +13,6 @@ func main() {
 	// creacion de paquetes
 
 	fmt.Println(saludar.Saludoingles())
+	fmt.Println(quote.Hello())
 
 }
