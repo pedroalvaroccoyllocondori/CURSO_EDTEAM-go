@@ -4,8 +4,8 @@ import (
 	"fmt"
 
 	"github.com/pedroalvaroccoyllocondori/go/saludar"
-	"rsc.io/quote"
-	quoteV3 "rsc.io/quote/v3"
+	
+	 "rsc.io/quote/v3"
 )
 
 func main() {
@@ -14,8 +14,8 @@ func main() {
 	// creacion de paquetes
 
 	fmt.Println(saludar.Saludoingles())
-	fmt.Println(quote.Hello())
-	fmt.Println(quoteV3.Concurrency())
+	fmt.Println(quote.HelloV3())
+	fmt.Println(quote.Concurrency())
 
 	
 
